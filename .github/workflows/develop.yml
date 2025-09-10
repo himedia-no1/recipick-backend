@@ -1,4 +1,4 @@
-name: Recipick Backend Develop CI/CD
+name: Develop
 
 on:
   push:
