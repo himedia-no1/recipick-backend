@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/apps" />
+            <option value="$PROJECT_DIR$/apps/admin-api" />
+            <option value="$PROJECT_DIR$/apps/admin-auth" />
+            <option value="$PROJECT_DIR$/apps/batch" />
+            <option value="$PROJECT_DIR$/apps/crawler" />
+            <option value="$PROJECT_DIR$/apps/user-api" />
+            <option value="$PROJECT_DIR$/apps/user-auth" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/admin-api" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/apps/admin-api" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/admin-auth" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/apps/admin-auth" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/batch" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/apps/batch" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/crawler" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/apps/crawler" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/user-api" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/apps/user-api" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/user-auth" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/apps/user-auth" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

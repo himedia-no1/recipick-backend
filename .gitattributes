@@ -1,0 +1,31 @@
+/gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
+
+* text=auto eol=lf
+
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+*.mp4 binary
+*.mp3 binary
+*.webm binary
+
+*.zip binary
+*.tar.gz binary
+
+*.pdf binary
+*.doc binary
+*.docx binary
