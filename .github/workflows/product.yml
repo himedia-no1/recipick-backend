@@ -27,7 +27,6 @@ jobs:
             crawler: 'apps/crawler/**'
             root:
               - '!apps/**'
-              - '!libs/**'
               - '**'
 
   build:
