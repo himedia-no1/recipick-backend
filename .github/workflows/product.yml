@@ -1,4 +1,4 @@
-name: Recipick Backend Product CI/CD
+name: Product
 
 on:
   push:
