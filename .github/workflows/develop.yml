@@ -3,28 +3,15 @@ name: Recipick Backend Develop CI/CD
 on:
   push:
     branches: [ dev ]
-    paths:
-      - 'apps/admin-api/**'
-      - 'apps/admin-auth/**'
-      - 'apps/user-api/**'
-      - 'apps/user-auth/**'
-      - 'apps/batch/**'
-      - 'apps/crawler/**'
   pull_request:
     branches: [ dev ]
-    paths:
-      - 'apps/admin-api/**'
-      - 'apps/admin-auth/**'
-      - 'apps/user-api/**'
-      - 'apps/user-auth/**'
-      - 'apps/batch/**'
-      - 'apps/crawler/**'
 
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.changes.outputs.changes }}
+      root-changed: ${{ steps.changes.outputs.root }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v2
@@ -38,14 +25,18 @@ jobs:
             user-auth: 'apps/user-auth/**'
             batch: 'apps/batch/**'
             crawler: 'apps/crawler/**'
+            root:
+              - '!apps/**'
+              - '!libs/**'
+              - '**'
 
   build:
     needs: detect-changes
-    if: needs.detect-changes.outputs.matrix != '[]'
+    if: needs.detect-changes.outputs.matrix != '[]' || needs.detect-changes.outputs.root-changed == 'true'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        module: ${{ fromJSON(needs.detect-changes.outputs.matrix) }}
+        module: ${{ fromJSON(needs.detect-changes.outputs.root-changed == 'true' && '["admin-api", "admin-auth", "user-api", "user-auth", "batch", "crawler"]' || needs.detect-changes.outputs.matrix) }}
     environment: ${{ matrix.module }}-dev
     steps:
       - uses: actions/checkout@v4
@@ -68,11 +59,11 @@ jobs:
 
   deploy:
     needs: [detect-changes, build]
-    if: needs.detect-changes.outputs.matrix != '[]'
+    if: needs.detect-changes.outputs.matrix != '[]' || needs.detect-changes.outputs.root-changed == 'true'
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        module: ${{ fromJSON(needs.detect-changes.outputs.matrix) }}
+        module: ${{ fromJSON(needs.detect-changes.outputs.root-changed == 'true' && '["admin-api", "admin-auth", "user-api", "user-auth", "batch", "crawler"]' || needs.detect-changes.outputs.matrix) }}
     environment: ${{ matrix.module }}-dev
     steps:
       - uses: appleboy/ssh-action@v1.0.3
