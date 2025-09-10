@@ -3,7 +3,6 @@ ARG MODULE
 WORKDIR /app
 COPY gradle gradle
 COPY gradlew .
-COPY gradle.properties .
 COPY settings.gradle.kts .
 COPY build.gradle.kts .
 COPY libs/ libs/
