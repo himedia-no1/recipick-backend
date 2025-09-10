@@ -2,8 +2,8 @@ plugins {
     id("java")
 }
 
-group = "com.no1.recipick"
-version = "1.0-SNAPSHOT"
+group = "com.no1"
+version = "1.0.0"
 
 repositories {
     mavenCentral()

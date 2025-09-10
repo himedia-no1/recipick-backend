@@ -4,8 +4,8 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
 }
 
-group = "com.no1.recipick.user"
-version = "0.0.1-SNAPSHOT"
+group = "com.no1"
+version = "1.0.0"
 description = "user-api"
 
 java {
