@@ -1,9 +1,7 @@
-name: Recipick Backend Develop CI/CD
+name: Develop
 
 on:
   push:
-    branches: [ dev ]
-  pull_request:
     branches: [ dev ]
 
 jobs:
