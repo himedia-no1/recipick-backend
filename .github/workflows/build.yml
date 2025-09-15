@@ -30,6 +30,7 @@ jobs:
           # 각 모듈별 경로 필터 생성
           IFS=',' read -ra MODULE_ARRAY <<< "${{ env.MODULES }}"
           for module in "${MODULE_ARRAY[@]}"; do
+            module=$(echo "$module" | xargs)  # 공백 제거
             filters="${filters}"$'\n'"${module}: 'apps/${module}/**'"
           done
 
@@ -48,7 +49,12 @@ jobs:
         run: |
           # 환경변수에서 모든 모듈 목록 생성
           IFS=',' read -ra MODULE_ARRAY <<< "${{ env.MODULES }}"
-          ALL_MODULES=$(printf '%s\n' "${MODULE_ARRAY[@]}" | jq -R . | jq -s .)
+          # 공백 제거
+          CLEANED_MODULES=()
+          for module in "${MODULE_ARRAY[@]}"; do
+            CLEANED_MODULES+=($(echo "$module" | xargs))
+          done
+          ALL_MODULES=$(printf '%s\n' "${CLEANED_MODULES[@]}" | jq -R . | jq -s .)
 
           if [[ "${{ steps.filter.outputs.root }}" == "true" ]]; then
             # 루트 파일 변경시 전체 모듈 빌드
