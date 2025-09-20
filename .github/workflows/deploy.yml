@@ -78,36 +78,20 @@ jobs:
             docker image prune -f || true
 
             case "${{ github.event.inputs.image }}:${{ steps.env.outputs.environment }}" in
-              "recipick-backend-admin:dev")
-                docker run -d \
-                  --name $CONTAINER \
-                  --restart unless-stopped \
-                  --network recipick \
-                  -p 8091:8080 \
-                  $IMAGE
-                ;;
-              "recipick-backend-admin:prod")
-                docker run -d \
-                  --name $CONTAINER \
-                  --restart unless-stopped \
-                  --network recipick \
-                  -p 8081:8080 \
-                  $IMAGE
-                ;;
               "recipick-backend-user:dev")
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
                   --network recipick \
-                  -p 8092:8080 \
+                  -p 8001:8080 \
                   $IMAGE
                 ;;
-              "recipick-backend-user:prod")
+              "recipick-backend-admin:dev")
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
                   --network recipick \
-                  -p 8082:8080 \
+                  -p 8002:8080 \
                   $IMAGE
                 ;;
               "recipick-backend-crawler:dev")
@@ -115,6 +99,22 @@ jobs:
                   --name $CONTAINER \
                   --restart unless-stopped \
                   --network recipick \
+                  $IMAGE
+                ;;
+              "recipick-backend-user:prod")
+                docker run -d \
+                  --name $CONTAINER \
+                  --restart unless-stopped \
+                  --network recipick \
+                  -p 8001:8080 \
+                  $IMAGE
+                ;;
+              "recipick-backend-admin:prod")
+                docker run -d \
+                  --name $CONTAINER \
+                  --restart unless-stopped \
+                  --network recipick \
+                  -p 8002:8080 \
                   $IMAGE
                 ;;
               "recipick-backend-crawler:prod")
