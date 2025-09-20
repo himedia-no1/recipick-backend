@@ -10,12 +10,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/apps" />
-            <option value="$PROJECT_DIR$/apps/admin-api" />
-            <option value="$PROJECT_DIR$/apps/admin-auth" />
-            <option value="$PROJECT_DIR$/apps/batch" />
+            <option value="$PROJECT_DIR$/apps/admin" />
             <option value="$PROJECT_DIR$/apps/crawler" />
-            <option value="$PROJECT_DIR$/apps/user-api" />
-            <option value="$PROJECT_DIR$/apps/user-auth" />
+            <option value="$PROJECT_DIR$/apps/user" />
             <option value="$PROJECT_DIR$/libs" />
             <option value="$PROJECT_DIR$/libs/common" />
           </set>
@@ -42,14 +39,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/apps/batch" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/apps/crawler" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/apps/crawler" />
           </set>
         </option>
       </GradleProjectSettings>
