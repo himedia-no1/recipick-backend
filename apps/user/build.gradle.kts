@@ -6,7 +6,7 @@ plugins {
 
 group = "com.no1"
 version = "1.0.0"
-description = "user-api"
+description = "user"
 
 java {
     toolchain {
