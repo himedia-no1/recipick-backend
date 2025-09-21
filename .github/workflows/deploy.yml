@@ -82,6 +82,8 @@ jobs:
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
+                  --network recipick \
+                  -e TZ=Asia/Seoul \
                   -p 8001:8080 \
                   $IMAGE
                 ;;
@@ -89,6 +91,8 @@ jobs:
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
+                  --network recipick \
+                  -e TZ=Asia/Seoul \
                   -p 8002:8080 \
                   $IMAGE
                 ;;
@@ -96,12 +100,16 @@ jobs:
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
+                  --network recipick \
+                  -e TZ=Asia/Seoul \
                   $IMAGE
                 ;;
               "recipick-backend-user:prod")
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
+                  --network recipick \
+                  -e TZ=Asia/Seoul \
                   -p 8001:8080 \
                   $IMAGE
                 ;;
@@ -109,6 +117,8 @@ jobs:
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
+                  --network recipick \
+                  -e TZ=Asia/Seoul \
                   -p 8002:8080 \
                   $IMAGE
                 ;;
@@ -116,6 +126,8 @@ jobs:
                 docker run -d \
                   --name $CONTAINER \
                   --restart unless-stopped \
+                  --network recipick \
+                  -e TZ=Asia/Seoul \
                   $IMAGE
                 ;;
               *)
